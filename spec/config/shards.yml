@@ -10,11 +10,14 @@ octopus:
       <<: *mysql
 
     postgresql_shard:
-      adapter: postgresql
-      username: <%= ENV['POSTGRES_USER'] || 'postgres' %>
-      password:
-      database: octopus_shard_1
-      encoding: unicode
+      adapter: sqlite3
+      database: /tmp/database2.sqlite3
+
+      #adapter: postgresql
+      #username: <%= ENV['POSTGRES_USER'] || 'postgres' %>
+      #password:
+      #database: octopus_shard_1
+      #encoding: unicode
 
     sqlite_shard:
       adapter: sqlite3
